@@ -53,5 +53,16 @@ usedButtons.forEach((button) => {
 
     });
 });
+
+var prevScrollpos = window.scrollY;
+window.onscroll = function() {
+  var currentScrollPos = window.scrollY;
+  if (prevScrollpos > currentScrollPos) {
+    navbox.style.top = "0";
+  } else {
+    navbox.style.top = "-77px";
+  }
+  prevScrollpos = currentScrollPos;
+}
 console.log("working!");
 
