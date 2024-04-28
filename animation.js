@@ -3,18 +3,25 @@ let usedButtons= document.querySelectorAll(".usable-item");
 let uniqueButtons= document.querySelectorAll(".unique-item");
 let navbox= document.getElementById("navlist");
 
-usedButtons.forEach((button) =>{
-    button.classList.remove("active");
-});
-let storedColor = window.localStorage.getItem("color");
-if (storedColor) {
-    let activeElement = document.querySelector(`[data-color="${storedColor}"]`);
-    if (activeElement) {
-        activeElement.classList.add("active");
+function setActive(className) {
+    let buttons = document.querySelectorAll("." + className);
+    buttons.forEach((button) => {
+        button.classList.remove("active");
+    });
+
+    let storedColor = window.localStorage.getItem("color");
+    if (storedColor) {
+        let activeElement = document.querySelector(`.${className}[data-color="${storedColor}"]`);
+        if (activeElement) {
+            activeElement.classList.add("active");
+        }
     }
 }
+
+setActive("usedButtons");
+
 usedButtons.forEach((button) => {
-    button.addEventListener("mouseenter", (e) => {
+    button.addEventListener("mouseover", (e) => {
 
         usedButtons.forEach((c) => {
             c.classList.remove("active");
@@ -64,5 +71,46 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
-console.log("working!");
 
+// logo code
+
+let icon = document.getElementsByClassName("icon")[0];
+
+icon.addEventListener("mouseover", (e) => {
+    icon.classList.add("fa-beat");
+});
+icon.addEventListener("mouseout", (e) => {
+    icon.classList.remove("fa-beat");
+});
+
+
+//Buttons code
+
+let colourfulButtons=document.querySelectorAll(".colourfulButtons");
+
+setActive("colourfulButtons");
+
+colourfulButtons.forEach((button) => {
+    button.addEventListener("mouseover", (e) => {
+        colourfulButtons.forEach((c) => {
+            c.classList.remove("active");
+            c.style.opacity = "0.4";
+        });
+
+        button.style.opacity = "1";
+        button.classList.add("active");
+        let color = e.target.dataset.color;
+        window.localStorage.setItem("color", color);
+        button.style.color = color;
+        button.style.borderColor = color;
+
+    });
+    button.addEventListener("mouseout", (e) => {
+        button.style.color="black";
+        button.style.borderColor="lightgray";
+        button.style.opacity="0.4";
+        button.classList.remove("active");
+    });
+
+
+});
