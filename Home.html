@@ -64,9 +64,9 @@
     <!-- --------------2nd div-------------- -->
 
     <div id="secondContainer">
-        <button id="teamwork" data-color="#0093fa" class="colourfulButtons active">Teamwork</button>
-        <button id="personalProjects" data-color="#2a966f" class="colourfulButtons">Personal projects</button>
-        <button id="everythingInBetween" data-color="#f84f38" class="colourfulButtons">Everything in between</button>
+        <button id="teamwork " data-color="#0093fa" class="colourfulButtons active option1">Teamwork</button>
+        <button id="personalProjects " data-color="#2a966f" class="colourfulButtons option2">Personal projects</button>
+        <button id="everythingInBetween " data-color="#f84f38" class="colourfulButtons option3">Everything in between</button>
     </div>
 
     <!-- --------------3rd div-------------- -->
@@ -81,19 +81,30 @@
             </div>
             <div id="listDiv-3-1">
                 <p>list</p>
-                <button class="listChoices-3-1"><i class="fa-solid fa-burst" style="color: #ff571f; padding-right: 2px;"></i> App Launch</button>
-                <button class="listChoices-3-1"><i class="fa-solid fa-house" style="color: #ff571f; padding-right: 2px;"></i> Kitchen Reno</button>
-                <button class="listChoices-3-1"><i class="fa-solid fa-child-reaching" style="color: #ff571f; padding-right: 2px;"></i> Daily Habits</button>
+                <button class="listChoices-3-1 option1" id="appLaunch"><i class="fa-solid fa-burst" style="color: #ff571f; padding-right: 2px;"></i> App Launch</button>
+                <button class="listChoices-3-1 option2" id="kitchenReno"><i class="fa-solid fa-house" style="color: #ff571f; padding-right: 2px;"></i> Kitchen Reno</button>
+                <button class="listChoices-3-1 option3" id="dailyHabits"><i class="fa-solid fa-child-reaching" style="color: #ff571f; padding-right: 2px;"></i> Daily Habits</button>
                 <button class="listChoices-3-1"><i class="fa-solid fa-burger" style="color: #ff571f; padding-right: 2px;" ></i> Recipies</button>
                 <button class="listChoices-3-1"><i class="fa-solid fa-pencil" style="color: #ff571f; padding-right: 2px;"></i> Design Work</button>
 
             </div>
         </div>
-        <div class="generalStyle-3"></div>
+        <div class="generalStyle-3" id="seconddiv-3">
+            <div id="users" ></div>
+            <div id="description"></div>
+            <div id="tasks"></div>
+            <!-- <img src="https://res.cloudinary.com/superlist/image/upload/v1706228326/website/2023/misc/Jenna_vcsqbn.webp" loading="lazy" alt="" class="s23-user-avatar">
+            <img src="https://res.cloudinary.com/superlist/image/upload/v1706228327/website/2023/misc/Ada_palmjc.webp" loading="lazy" alt="" class="s23-user-avatar s23-ua-2">
+            <img src="https://res.cloudinary.com/superlist/image/upload/v1706228327/website/2023/misc/Private_r4fa8f.webp" loading="lazy" alt="" class="s23-user-avatar">
+            <img src="https://res.cloudinary.com/superlist/image/upload/v1706228327/website/2023/misc/Jon_ts9dtj.webp" loading="lazy" alt="" class="s23-user-avatar s23-ua-3">
+            <img src="https://res.cloudinary.com/superlist/image/upload/v1706228328/website/2023/misc/Stan_w0kqid.webp" loading="lazy" alt="" class="s23-user-avatar s23-ua-4">
+            <img src="https://res.cloudinary.com/superlist/image/upload/v1706228327/website/2023/misc/Keyla_eaebye.webp" loading="lazy" alt="" class="s23-user-avatar s23-ua-5"> -->
+
+        </div>
         <div class="generalStyle-3"></div>
     </div>
 </div>
-
+        <script src="dynamicDivs.js"></script>
         <script src="animation.js"></script>
         <script src="logoAnimation.js"></script>
 </body>
