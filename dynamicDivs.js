@@ -37,24 +37,21 @@ function setOption(op) {
     section1.innerHTML = "";
     section2.innerHTML = "";
     section3.innerHTML = "";
-    // Populate users section with images
+
     for (let index = 0; index < choices[op].photos.length; index++) {
         let img = document.createElement('img');
         img.src = choices[op].photos[index];
         section1.appendChild(img);
     }
 
-    // If the option is 0, append a text node indicating more users
     if (op == 0) {
         section1.appendChild(document.createTextNode("+6"));
     }
 
-    // Set title and description
 section2.appendChild(document.createTextNode(choices[op].title));
     section2.appendChild(document.createElement('br'));
     section2.appendChild(document.createTextNode(choices[op].description));
 
-    // Populate tasks section
     for (let index = 0; index < choices[op].tasks.length; index++) {
         let taskItem = document.createElement('li');
         taskItem.textContent = choices[op].tasks[index];
@@ -71,7 +68,6 @@ function addOptionListeners(options, index) {
     });
 }
 
-// Add event listeners to all options
 addOptionListeners(option1, 0);
 addOptionListeners(option2, 1);
 addOptionListeners(option3, 2);
